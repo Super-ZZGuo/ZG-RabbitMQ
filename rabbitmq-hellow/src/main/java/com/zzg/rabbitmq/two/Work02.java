@@ -24,6 +24,10 @@ public class Work02 {
         };
         //采用手动应答
         boolean autoAck=false;
+        //消费者采用不公平(分发)接受
+        //int perfetchCount = 1;
+        int perfetchCount = 5;
+        channel.basicQos(perfetchCount);
         channel.basicConsume(ACK_QUEUE_NAME,autoAck,deliverCallback,(consumerTag)->{
             System.out.println(consumerTag+"消费者取消消费接口回调逻辑");
         });
