@@ -1,4 +1,4 @@
-package com.zzg.rabbitmq.springbootrabbitmq;/*
+package com.zzg.rabbitmq.springbootrabbitmq.config;/*
 @date 2021/9/6 - 10:06 下午
 */
 

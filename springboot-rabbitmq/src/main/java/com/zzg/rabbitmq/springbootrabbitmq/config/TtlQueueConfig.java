@@ -1,4 +1,4 @@
-package com.zzg.rabbitmq.springbootrabbitmq;/*
+package com.zzg.rabbitmq.springbootrabbitmq.config;/*
 @date 2021/9/6 - 10:07 下午
 */
 
@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 死信队列 配置类
+ */
 @Configuration
 public class TtlQueueConfig {
     public static final String X_EXCHANGE = "X";
