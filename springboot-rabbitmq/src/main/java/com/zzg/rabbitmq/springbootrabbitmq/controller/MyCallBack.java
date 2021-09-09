@@ -6,7 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * 发布确认(ConfirmProducer)的回调方法
@@ -14,6 +17,15 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class MyCallBack implements RabbitTemplate.ConfirmCallback,RabbitTemplate.ReturnCallback {
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+    //rabbitTemplate 注入之后就设置该值
+    @PostConstruct
+    private void init() {
+        rabbitTemplate.setConfirmCallback(this);
+        //设置回退消息交给谁处理
+        rabbitTemplate.setReturnCallback(this);
+    }
     /**
      * 交换机不管是否收到消息的一个回调方法
      * CorrelationData

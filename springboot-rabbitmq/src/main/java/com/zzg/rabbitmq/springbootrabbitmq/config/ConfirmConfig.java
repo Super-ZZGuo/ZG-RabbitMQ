@@ -12,8 +12,11 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ConfirmConfig {
+    //消息确认交换机
     public static final String CONFIRM_EXCHANGE_NAME = "confirm.exchange";
     public static final String CONFIRM_QUEUE_NAME = "confirm.queue";
+
+    //备份交换机
     public static final String BACKUP_EXCHANGE_NAME = "backup.exchange";
     public static final String BACKUP_QUEUE_NAME = "backup.queue";
     public static final String WARNING_QUEUE_NAME = "warning.queue";
