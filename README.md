@@ -1,1 +1,5 @@
-## 学习RabbitMq消息队列时，跟随学习视频敲的练习代码
+# ZG-RabbitMQ
+
+## 自学RabbitMq时，敲的练习代码
+
+
